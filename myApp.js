@@ -104,7 +104,11 @@ var createAndSavePerson = function(done) {
     favoriteFoods: ['bread', 'egg']
   })
   person.save((error, data) => {
-    if(error) return done(error);
+    if(error){
+      console.log(error);
+      return done(error);
+    }
+    console.log(data);
     return done(null, data);
   });
 };

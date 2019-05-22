@@ -12,10 +12,14 @@
 // Add `mongodb` and `mongoose` to the project's `package.json`. Then require 
 // `mongoose`. Store your **mLab** database URI in the private `.env` file 
 // as `MONGO_URI`. Connect to the database using `mongoose.connect(<Your URI>)`
-try {
+
   const mongoose = require('mongoose');
   const uri = process.env.MONGO_URI;  
+ try {
   mongoose.connect(uri);
+ } catch (error) {
+   console.log(error);
+ } 
 
 
 /** # SCHEMAS and MODELS #
@@ -275,9 +279,7 @@ var queryChain = function(done) {
   done(null/*, data*/);
 };
 
-} catch (error) {
-  console.log(error);
-}
+
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !

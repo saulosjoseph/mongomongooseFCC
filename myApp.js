@@ -46,17 +46,13 @@ try {
 // <Your code here >
 
 const Schema = mongoose.Schema;
-var personSchema = new Schema({
+const personSchema = new Schema({
   name: { 
     type: String,
     required: true
   },
   age: Number,
-  favoriteFoods: [
-    {
-      food: String
-    }
-  ]
+  favoriteFoods: [String]
 });
 
 const Person = mongoose.model('person', personSchema);

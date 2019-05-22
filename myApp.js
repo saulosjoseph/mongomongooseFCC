@@ -16,9 +16,6 @@ try {
   const mongoose = require('mongoose');
   const uri = process.env.MONGO_URI;  
   mongoose.connect(uri);
-} catch (error) {
-  console.log(error);
-}
 
 
 /** # SCHEMAS and MODELS #
@@ -57,6 +54,7 @@ const personSchema = new Schema({
 });
 
 const Person = mongoose.model('Person', personSchema);
+
 
 /* = <Your Model> */
 
@@ -105,7 +103,6 @@ var createAndSavePerson = function(done) {
     if(error) return done(error);
     return done(null, data);
   });
-  done(null /*, data*/);
 };
 
 /** 4) Create many People with `Model.create()` */
@@ -277,6 +274,10 @@ var queryChain = function(done) {
   
   done(null/*, data*/);
 };
+
+} catch (error) {
+  console.log(error);
+}
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !

@@ -51,7 +51,7 @@ var personSchema = new Schema({
     type: String,
     required: true
   },
-  age: String,
+  age: Number,
   favoriteFoods: [
     {
       food: String

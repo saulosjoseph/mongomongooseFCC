@@ -46,7 +46,7 @@ try {
 // <Your code here >
 
 const Schema = mongoose.Schema;
-var person = new Schema({
+var personSchema = new Schema({
   name: { 
     type: String,
     required: true
@@ -58,6 +58,8 @@ var person = new Schema({
     }
   ]
 });
+
+const Person = mongoose.model('person', personSchema);
 
 /* = <Your Model> */
 
